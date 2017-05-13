@@ -13,6 +13,7 @@
         <module>Amazon</module>
         <module>Upscalelearning</module>
         <module>NYP</module>
+        <module>TMobile</module>
     </modules>
 
     <dependencyManagement>

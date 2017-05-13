@@ -105,6 +105,10 @@ public class CommonAPI {
     private String saucelabs_accesskey = "ssh key";
     private String browserstack_accesskey = "cMx99y4ir3xZQjck18Dq";
 
+    public String Url(){
+        return "http://www.amazon.com";
+    }
+
     @Parameters({"useCloudEnv","cloudEnvName","os","os_version","browserName","browserVersion","url"})
     @BeforeMethod
     public void setUp(@Optional("false") boolean useCloudEnv, @Optional("false")String cloudEnvName,
@@ -122,7 +126,7 @@ public class CommonAPI {
         }
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(35, TimeUnit.SECONDS);
-        driver.get(url);
+        driver.get(Url());
         driver.manage().window().maximize();
     }
     public WebDriver getLocalDriver(@Optional("mac") String OS,String browserName){

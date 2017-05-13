@@ -9,6 +9,7 @@
         <module name="Amazon" />
         <module name="Generic" />
         <module name="NYP" />
+        <module name="TMobile" />
         <module name="Upscalelearning" />
       </profile>
     </annotationProcessing>
@@ -17,6 +18,7 @@
       <module name="Generic" target="1.8" />
       <module name="NYP" target="1.8" />
       <module name="PntAutomation" target="1.8" />
+      <module name="TMobile" target="1.8" />
       <module name="Upscalelearning" target="1.8" />
     </bytecodeTargetLevel>
   </component>
