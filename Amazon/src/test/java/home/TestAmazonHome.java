@@ -1,9 +1,9 @@
 package home;
 
-import base.CommonAPI;
-import org.testng.Assert;
-import org.testng.annotations.Test;
-import org.openqa.selenium.By;
+        import base.CommonAPI;
+        import org.testng.Assert;
+        import org.testng.annotations.Test;
+        import org.openqa.selenium.By;
 
 /**
  * Created by PIIT_NYA on 5/6/2017.
