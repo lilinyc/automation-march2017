@@ -13,9 +13,9 @@
 
     <test name = "Amazon Home">
         <classes>
-            <class name="searchitems.SearchItems"/>
-            <!--<class name="searchitems.DropDownMenuSearch"/>-->
-            <!--<class name="searchitems.SearchItemsWithDatabaseDataSource"/>-->
+            <!--<class name="searchitems.SearchItems"/>-->
+            <class name="searchitems.DropDownMenuSearch"/>
+            <class name="searchitems.SearchItemsWithDatabaseDataSource"/>
         </classes>
     </test>
 </suite>

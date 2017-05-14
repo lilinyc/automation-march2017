@@ -1,13 +1,35 @@
-1494183434870	geckodriver	INFO	Listening on 127.0.0.1:15638
-1494183435607	geckodriver::marionette	INFO	Starting browser \\?\C:\Program Files (x86)\Mozilla Firefox\firefox.exe with args ["-marionette"]
-1494183435884J	aavdadSocnrsi.pmta neargreorr	:E RrReOsR	startup failedo:u r[cEex:c//egprtei/omno.d.u.l e"sC/oAmdpdonent returned failure code: 0x80070057 (NS_ERROR_ILLEGAL_VALUE) [nsIFile.create]"  nsresult: "0x80070057 (NS_ERROR_ILLEGoAL_VALUE)"  location: "JS frame :: resource://gre/mnoMdaunlaegse/rF.jsiml,e lineU t1ils.jsm :: FileUtils_getDir :: line 70"  data: no] Stack trace: FileUtils_657: NS_ERROR_NOT_INITIALIZED: AddonManager is not initialgetDir()@resource://gre/modules/FileUtils.ized
-jsm:70 < FileUtils_getFile()@resource://gre/modules/FileUtils.jsm:42 < validateBlocklist()@resource://gre/modules/AddonManager.jsm:671 < startup()@resource://gre/modules/AddonManager.jsm:834 < startup()@resource://gre/modules/AddonManager.jsm:3129 < observe()@resource://gre/components/addonManager.js:65
-1494183438464	Marionette	INFO	Listening on port 51255
+Extent Report directory: C:\Users\PIIT_NYA\IdeaProjects\automation-march2017\Amazon\target\surefire-reports\html
+May 14, 2017 2:45:09 PM com.relevantcodes.extentreports.ExtentReports loadConfig
+WARNING: Unable to perform report configuration. The file C:\Users\PIIT_NYA\IdeaProjects\automation-march2017\Amazon\report-config.xml was not found.
+1494787509724	geckodriver	INFO	Listening on 127.0.0.1:3153
+1494787510488	geckodriver::marionette	INFO	Starting browser \\?\C:\Program Files (x86)\Mozilla Firefox\firefox.exe with args ["-marionette"]
+1494787510772	addons.manJaagervaScript	ERROR	startu p efrariolre:d :r e[sEoxception... "Component returned failure code: 0x8007005urce://gre/modules/AddonManager.jsm, line 1657: NS_ERROR_NOT_INITIALIZED: AddonManager is not initialized
+7 (NS_ERROR_ILLEGAL_VALUE) [nsIFile.create]"  nsresult: "0x80070057 (NS_ERROR_ILLEGAL_VALUE)"  location: "JS frame :: resource://gre/modules/FileUtils.jsm :: FileUtils_getDir :: line 70"  data: no] Stack trace: FileUtils_getDir()@resource://gre/modules/FileUtils.jsm:70 < FileUtils_getFile()@resource://gre/modules/FileUtils.jsm:42 < validateBlocklist()@resource://gre/modules/AddonManager.jsm:671 < startup()@resource://gre/modules/AddonManager.jsm:834 < startup()@resource://gre/modules/AddonManager.jsm:3129 < observe()@resource://gre/components/addonManager.js:65
+1494787513326	Marionette	INFO	Listening on port 61480
 JavaScript error: resource://gre/modules/AddonManager.jsm, line 2570: NS_ERROR_NOT_INITIALIZED: AddonManager is not initialized
-May 07, 2017 2:57:18 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+May 14, 2017 2:45:13 PM org.openqa.selenium.remote.ProtocolHandshake createSession
 INFO: Detected dialect: W3C
-It has been called
-1494183445136	Marionette	INFO	New connections will no longer be accepted
-May 07, 2017 2:57:33 PM org.openqa.selenium.remote.ProtocolHandshake createSession
-INFO: Detected dialect: OSS
+Epic: Metro EC:1,2 <a https://peoplentch.atlassian.net/browse/GREEN-7> GREEN-7 </a>
+Launch local browser Instance
+SearchPage: get Data From Excel File And Search
+ItemsToBeSearched: get Data From Excel File
+SearchPage: search For :   Salmon
+SearchPage: clear Search Input
+SearchPage: search For :   Laptop
+SearchPage: clear Search Input
+SearchPage: search For :   Honey
+SearchPage: clear Search Input
+SearchPage: search For :   i Phone
+SearchPage: clear Search Input
+SearchPage: search For :   Books
+SearchPage: clear Search Input
+SearchPage: search For :   Selenium
+SearchPage: clear Search Input
+SearchPage: search For :   Lemon
+SearchPage: clear Search Input
+SearchPage: search For :   Tea
+SearchPage: clear Search Input
+SearchPage: search For :   Wine
+SearchPage: clear Search Input
+1494787539671	Marionette	INFO	New connections will no longer be accepted
 It has been called
