@@ -3,19 +3,19 @@
 
 <suite name="Amazon" parallel="tests">
 
-    <parameter name="useCloudEnv" value="false"/>
+    <parameter name="useCloudEnv" value="true"/>
     <parameter name="cloudEnvName" value="browserstack"/>
-    <parameter name="os" value="Windows"/>
-    <parameter name="os_version" value="10"/>
+    <parameter name="os" value="OS X"/>
+    <parameter name="os_version" value="Sierra"/>
     <parameter name="browserName" value="firefox"/>
     <parameter name="browserVersion" value="53.0"/>
     <parameter name="url" value="http://amazon.com"/>
 
     <test name = "Amazon Home">
         <classes>
-            <!--<class name="searchitems.SearchItems"/>-->
+            <class name="searchitems.SearchItems"/>
             <class name="searchitems.DropDownMenuSearch"/>
-            <class name="searchitems.SearchItemsWithDatabaseDataSource"/>
+            <!--<class name="searchitems.SearchItemsWithDatabaseDataSource"/>-->
         </classes>
     </test>
 </suite>
