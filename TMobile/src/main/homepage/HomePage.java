@@ -38,6 +38,9 @@ public class HomePage extends CommonAPI {
     @FindBy(how = How.CSS, using = ".content div:nth-child(6) .cta a")
     public static WebElement fastestNetworkPromotionLinkElement;
 
+    @FindBy(how = How.CSS, using = "#divfootermain")
+    public static WebElement footerElement;
+
     public void navigateToCellPhonesPage() {
         TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
         }.getClass().getEnclosingMethod().getName()));
@@ -74,5 +77,18 @@ public class HomePage extends CommonAPI {
         fastestNetworkPromotionLinkElement.click();
         sleepFor(2);
         waitUntilVisible(FastestNetworkPromotionPage.videoContainerSelector);
+    }
+
+    public void scrollToFooter() {
+        scrollByCss(footerElement);
+    }
+
+    public String getFooterLinkText(String ariaLabel) {
+        return getTextByCss("#divfootermain a[aria-label='" + ariaLabel + "']");
+    }
+
+    public void navigateToFooterPage(String ariaLabel, String waitForElement) {
+        clickByCss("#divfootermain a[aria-label='" + ariaLabel + "']");
+        waitUntilVisible(By.cssSelector(waitForElement));
     }
 }

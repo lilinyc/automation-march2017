@@ -24,7 +24,8 @@ public class TestHomepage extends CommonAPI {
 
     @Test
     public void TestSearchBasic() {
-        TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object(){}.getClass().getEnclosingMethod().getName()));
+        TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
+        }.getClass().getEnclosingMethod().getName()));
         HomePage homePage = PageFactory.initElements(driver, HomePage.class);
         CellPhonesPage cellPhonesPage = PageFactory.initElements(driver, CellPhonesPage.class);
         homePage.navigateToCellPhonesPage();
@@ -34,7 +35,8 @@ public class TestHomepage extends CommonAPI {
 
     @Test
     public void TestPromotionSamsungGalaxy() {
-        TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object(){}.getClass().getEnclosingMethod().getName()));
+        TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
+        }.getClass().getEnclosingMethod().getName()));
         HomePage homePage = PageFactory.initElements(driver, HomePage.class);
         CellPhonesPage cellPhonesPage = PageFactory.initElements(driver, CellPhonesPage.class);
 
@@ -48,7 +50,8 @@ public class TestHomepage extends CommonAPI {
 
     @Test
     public void TestPromotionFastSwitch() {
-        TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object(){}.getClass().getEnclosingMethod().getName()));
+        TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
+        }.getClass().getEnclosingMethod().getName()));
         HomePage homePage = PageFactory.initElements(driver, HomePage.class);
         SwitchCarrierPage switchCarrierPage = PageFactory.initElements(driver, SwitchCarrierPage.class);
 
@@ -63,7 +66,8 @@ public class TestHomepage extends CommonAPI {
 
     @Test
     public void TestPromotionFastestNetwork() {
-        TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object(){}.getClass().getEnclosingMethod().getName()));
+        TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
+        }.getClass().getEnclosingMethod().getName()));
         HomePage homePage = PageFactory.initElements(driver, HomePage.class);
         FastestNetworkPromotionPage promotionsPage = PageFactory.initElements(driver, FastestNetworkPromotionPage.class);
 
@@ -78,40 +82,50 @@ public class TestHomepage extends CommonAPI {
 
     @Test
     public void TestFooterContactInformation() {
-        scrollByCss("#divfootermain");
+        TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
+        }.getClass().getEnclosingMethod().getName()));
+        HomePage homePage = PageFactory.initElements(driver, HomePage.class);
 
-        String footerText = getTextByCss("#divfootermain a:nth-child(1)");
+        homePage.scrollToFooter();
+
+        String footerText = homePage.getFooterLinkText("Contact information");
         Assert.assertEquals(footerText, "Contact information");
-        clickByCss("#divfootermain a:nth-child(1)");
 
-        waitUntilVisible(By.cssSelector(".pillbox_container "));
+        homePage.navigateToFooterPage("Contact information", ".pillbox_container");
+
         String headerText = getTextByCss(".container-fluid h2");
         Assert.assertEquals(headerText.trim(), "Contact Us");
     }
 
 
     @Test
-    public void TestFooterCheckOrderStatus(){
-        scrollByCss("#divfootermain");
+    public void TestFooterCheckOrderStatus() {
+        TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
+        }.getClass().getEnclosingMethod().getName()));
+        HomePage homePage = PageFactory.initElements(driver, HomePage.class);
 
-        String footerText = getTextByCss("#divfootermain span p:nth-child(2) a");
+        homePage.scrollToFooter();
+
+        String footerText = homePage.getFooterLinkText("Check order status");
         Assert.assertEquals(footerText, "Check order status");
-        clickByCss("#divfootermain span p:nth-child(2) a");
+        homePage.navigateToFooterPage("Check order status", ".container-fluid ");
 
-        waitUntilVisible(By.cssSelector(".container-fluid "));
         String headerText = getTextByCss("#page_title_left");
         Assert.assertEquals(headerText.trim(), "Order status");
-        }
+    }
 
     @Test
-    public void TestFooterReturnPolicy (){
-        scrollByCss("#divfootermain");
+    public void TestFooterReturnPolicy() {
+        TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
+        }.getClass().getEnclosingMethod().getName()));
+        HomePage homePage = PageFactory.initElements(driver, HomePage.class);
 
-        String footerText = getTextByCss("#divfootermain span p:nth-child(3) a");
+        homePage.scrollToFooter();
+
+        String footerText = homePage.getFooterLinkText("View Return Policy");
         Assert.assertEquals(footerText, "View Return Policy");
-        clickByCss("#divfootermain span p:nth-child(3) a");
+        homePage.navigateToFooterPage("View Return Policy", "#body");
 
-        waitUntilVisible(By.cssSelector("#body"));
         String headerText = getTextByCss(".ftxt18");
         Assert.assertEquals(headerText.trim(), "RETURN POLICY");
 
@@ -119,91 +133,112 @@ public class TestHomepage extends CommonAPI {
 
     @Test
     public void TestFooterRebate() {
-        scrollByCss("#divfootermain");
+        TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
+        }.getClass().getEnclosingMethod().getName()));
+        HomePage homePage = PageFactory.initElements(driver, HomePage.class);
 
-        String footerText = getTextByCss("#divfootermain span p:nth-child(4) a");
+        homePage.scrollToFooter();
+
+        String footerText = homePage.getFooterLinkText("Get a rebate");
         Assert.assertEquals(footerText, "Get a rebate");
-        clickByCss("#divfootermain span p:nth-child(4) a");
+        homePage.navigateToFooterPage("Get a rebate", ".pillbox");
 
-        waitUntilVisible(By.cssSelector(".pillbox"));
         String headerText = getTextByCss(".container-fluid h2");
         Assert.assertEquals(headerText.trim(), "T-Mobile Promotions Center");
     }
 
     @Test
     public void TestFooterPageLocator() {
-        scrollByCss("#divfootermain");
+        TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
+        }.getClass().getEnclosingMethod().getName()));
+        HomePage homePage = PageFactory.initElements(driver, HomePage.class);
 
-        String footerText = getTextByCss("#divfootermain span p:nth-child(5) a");
+        homePage.scrollToFooter();
+
+        String footerText = homePage.getFooterLinkText("Find a store");
         Assert.assertEquals(footerText, "Find a store");
-        clickByCss("#divfootermain span p:nth-child(5) a");
+        homePage.navigateToFooterPage("Find a store", "#PageLocator");
 
-        waitUntilVisible(By.cssSelector("#PageLocator"));
         String headerText = getTextByCss("#PageLocator h2");
         Assert.assertEquals(headerText.trim(), "Store Locator");
     }
 
     @Test
     public void TestFooterTradeInProgram() {
-        scrollByCss("#divfootermain");
+        TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
+        }.getClass().getEnclosingMethod().getName()));
+        HomePage homePage = PageFactory.initElements(driver, HomePage.class);
 
-        String footerText = getTextByCss("#divfootermain span p:nth-child(6) a");
+        homePage.scrollToFooter();
+
+        String footerText = homePage.getFooterLinkText("Trade in program");
         Assert.assertEquals(footerText, "Trade in program");
-        clickByCss("#divfootermain span p:nth-child(6) a");
+        homePage.navigateToFooterPage("Trade in program", "#tradein_estimate_content");
 
-        waitUntilVisible(By.cssSelector("#tradein_estimate_content"));
         String headerText = getTextByCss("#tradein_estimate_content h1");
         Assert.assertEquals(headerText.trim(), "Get an estimate");
     }
 
     @Test
     public void TestFooterSupportHome() {
-        scrollByCss("#divfootermain");
+        TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
+        }.getClass().getEnclosingMethod().getName()));
+        HomePage homePage = PageFactory.initElements(driver, HomePage.class);
 
-        String footerText = getTextByCss("#divfootermain div:nth-of-type(2) span p:nth-child(1) a");
+        homePage.scrollToFooter();
+
+        String footerText = homePage.getFooterLinkText("Support home");
         Assert.assertEquals(footerText, "Support home");
-        clickByCss("#divfootermain div:nth-of-type(2) span p:nth-child(1) a");
+        homePage.navigateToFooterPage("Support home", ".content-large");
 
-        waitUntilVisible(By.cssSelector(".content-large"));
         String headerText = getTextByCss(".col-spacing h2");
         Assert.assertEquals(headerText.trim(), "ACCOUNT");
     }
 
     @Test
     public void TestFooterDeviceSupport() {
-        scrollByCss("#divfootermain");
+        TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
+        }.getClass().getEnclosingMethod().getName()));
+        HomePage homePage = PageFactory.initElements(driver, HomePage.class);
 
-        String footerText = getTextByCss("#divfootermain div:nth-of-type(2) span p:nth-child(2) a");
-        Assert.assertEquals(footerText.toLowerCase(), "device support");
-        clickByCss("#divfootermain div:nth-of-type(2) span p:nth-child(2) a");
+        homePage.scrollToFooter();
 
-        waitUntilVisible(By.cssSelector(".cfArticle"));
+        String footerText = homePage.getFooterLinkText("Device support");
+        Assert.assertEquals(footerText, "Device support");
+        homePage.navigateToFooterPage("Device support", ".cfArticle");
+
         String headerText = getTextByCss(".segmentNav h2");
         Assert.assertEquals(headerText.trim(), "Select a device");
     }
 
-  @Test
+    @Test
     public void TestFooterQuestionsAboutYourBill() {
-        scrollByCss("#divfootermain");
+        TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
+        }.getClass().getEnclosingMethod().getName()));
+        HomePage homePage = PageFactory.initElements(driver, HomePage.class);
 
-        String footerText = getTextByCss("#divfootermain div:nth-of-type(2) span p:nth-child(3) a");
-        Assert.assertEquals(footerText.toLowerCase(), "questions about your bill");
-        clickByCss("#divfootermain div:nth-of-type(2) span p:nth-child(3) a");
+        homePage.scrollToFooter();
 
-        waitUntilVisible(By.cssSelector(".j-page-header"));
+        String footerText = homePage.getFooterLinkText("Questions about your bill");
+        Assert.assertEquals(footerText, "Questions about your bill");
+        homePage.navigateToFooterPage("Questions about your bill", ".j-page-header");
+
         String headerText = getTextByCss("#j-globalNav li:nth-child(1)");
         Assert.assertEquals(headerText.trim(), "Support");
     }
 
     @Test
     public void TestFooterPlansAndServices() {
-        scrollByCss("#divfootermain");
+        TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
+        }.getClass().getEnclosingMethod().getName()));
+        HomePage homePage = PageFactory.initElements(driver, HomePage.class);
 
-        String footerText = getTextByCss("#divfootermain div:nth-of-type(2) span p:nth-child(4) a");
-        Assert.assertEquals(footerText.toLowerCase(), "plans & services");
-        clickByCss("#divfootermain div:nth-of-type(2) span p:nth-child(4) a");
+        homePage.scrollToFooter();
 
-        waitUntilVisible(By.cssSelector(".j-placeTitle"));
+        String footerText = homePage.getFooterLinkText("Plans & services");
+        Assert.assertEquals(footerText, "Plans & services");
+        homePage.navigateToFooterPage("Plans & services", ".j-placeTitle");
+        
         String headerText = getTextByCss("h1.j-placeTitle");
         Assert.assertEquals(headerText.trim(), "Plans & services");
     }
