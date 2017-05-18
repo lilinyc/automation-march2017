@@ -127,7 +127,7 @@ public class CommonAPI {
         }
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(35, TimeUnit.SECONDS);
-        driver.get(url);
+        driver.get(Url());
         driver.manage().window().maximize();
     }
 
@@ -270,7 +270,10 @@ public class CommonAPI {
     }
 
     public void scrollByCss(String locator) {
-        WebElement element = driver.findElement(By.cssSelector(locator));
+        scrollByCss(driver.findElement(By.cssSelector(locator)));
+    }
+
+    public void scrollByCss(WebElement element) {
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
         sleepFor(1);
     }
@@ -391,6 +394,12 @@ public class CommonAPI {
     public void waitUntilClickAble(By locator) {
         WebDriverWait wait = new WebDriverWait(driver, 10);
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(locator));
+    }
+
+    public void waitUntilVisible(String cssSelector) {
+        By locator = By.cssSelector(cssSelector);
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 
     public void waitUntilVisible(By locator) {

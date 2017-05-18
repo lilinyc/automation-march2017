@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Alibaba" />
         <module name="Amazon" />
         <module name="Generic" />
         <module name="NYP" />
@@ -14,6 +15,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Alibaba" target="1.8" />
       <module name="Amazon" target="1.8" />
       <module name="Generic" target="1.8" />
       <module name="NYP" target="1.8" />
