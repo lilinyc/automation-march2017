@@ -161,7 +161,7 @@ public class SearchItems extends CommonAPI {
 
         SearchPage searchPage = PageFactory.initElements(driver, SearchPage.class);
 
-        searchPage.searchForItem("AmazonBasics Portable Bluetooth Speaker ");
+        searchPage.searchForItem("AmazonBasics Portable Bluetooth Speaker");
         String productName = searchPage.getFirstProductTitle();
         Assert.assertEquals(productName.contains("AmazonBasics Portable Bluetooth Speaker "), true);
     }

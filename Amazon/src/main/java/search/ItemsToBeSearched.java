@@ -17,4 +17,11 @@ public class ItemsToBeSearched extends CommonAPI{
         String [] st = dr.fileReader(path);
         return st;
     }
+
+    public String [][] getSearchDataFromExcelFile()throws IOException {
+        TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object(){}.getClass().getEnclosingMethod().getName()));
+        String path = System.getProperty("user.dir")+"/data/amazonSearch.xls";
+        String [][] st = dr.multiColumnFileReader(path);
+        return st;
+    }
 }
