@@ -127,7 +127,7 @@ public class CommonAPI {
         }
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(35, TimeUnit.SECONDS);
-        driver.get(Url());
+        driver.get(url);
         driver.manage().window().maximize();
     }
 
