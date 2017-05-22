@@ -238,7 +238,7 @@ public class TestHomepage extends CommonAPI {
         String footerText = homePage.getFooterLinkText("Plans & services");
         Assert.assertEquals(footerText, "Plans & services");
         homePage.navigateToFooterPage("Plans & services", ".j-placeTitle");
-        
+
         String headerText = getTextByCss("h1.j-placeTitle");
         Assert.assertEquals(headerText.trim(), "Plans & services");
     }

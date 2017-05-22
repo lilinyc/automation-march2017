@@ -102,9 +102,9 @@ public class CommonAPI {
 
     public static WebDriver driver = null;
     private String saucelabs_username = "mrahman";
-    private String browserstack_username = "syedhossain1";
+    private String browserstack_username = "lili82";
     private String saucelabs_accesskey = "ssh key";
-    private String browserstack_accesskey = "cMx99y4ir3xZQjck18Dq";
+    private String browserstack_accesskey = "jwxnCRQhWwWpQKyLvHfg";
 
     public String Url() {
         return "http://www.amazon.com";
@@ -112,7 +112,7 @@ public class CommonAPI {
 
     @Parameters({"useCloudEnv", "cloudEnvName", "os", "os_version", "browserName", "browserVersion", "url"})
     @BeforeMethod
-    public void setUp(@Optional("false") boolean useCloudEnv, @Optional("false") String cloudEnvName,
+    public void setUp(@Optional("false") boolean useCloudEnv, @Optional("true") String cloudEnvName,
                       @Optional("Windows") String os, @Optional("10") String os_version, @Optional("firefox") String browserName, @Optional("34")
                               String browserVersion, @Optional("http://www.amazon.com") String url) throws IOException {
         if (useCloudEnv == true) {

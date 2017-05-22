@@ -1,6 +1,7 @@
 package search;
 
 import base.CommonAPI;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -15,12 +16,20 @@ import java.io.InterruptedIOException;
  * Created by PIIT_NYA on 5/14/2017.
  */
 public class SearchPage extends CommonAPI {
+    private  static final String categorySelector = ".categoryRefinementsSection";
 
     @FindBy(how = How.CSS, using = "#twotabsearchtextbox")
     public static WebElement searchInput;
 
     @FindBy(how = How.CSS, using = ".nav-input")
     public static WebElement searchSubmit;
+
+
+    @FindBy(how = How.CSS, using = ".s-access-title")
+    public static WebElement firstProduct;
+
+    @FindBy(how = How.CSS, using = ".categoryRefinementsSection ul li a span:first-child")
+    public static WebElement firstCategory;
 
     public void searchFor(String item) {
         TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object(){}.getClass().getEnclosingMethod().getName()+": " + item));
@@ -45,5 +54,23 @@ public class SearchPage extends CommonAPI {
             sleepFor(2);
             search.clearSearchInput();
         }
+    }
+
+    public void searchForItem(String item) {
+        this.searchFor(item);
+        waitUntilVisible(By.cssSelector(categorySelector));
+    }
+
+    public String getFirstCategoryTitle() {
+        return firstCategory.getText();
+    }
+
+    public String getFirstProductTitle() {
+        return firstProduct.getText();
+    }
+
+    public void clickOnFirstProdcut() {
+        firstProduct.click();
+        waitUntilVisible(By.cssSelector("#productTitle"));
     }
 }
