@@ -77,6 +77,7 @@ public class SearchPage extends CommonAPI {
         for (int i = 1; i < values.length; i++) {
             search.searchFor(values[i][0]);
             sleepFor(2);
+            waitUntilClickAble(By.className("s-access-title"));
             verifyFirstProductTitle(values[i][1]);
             sleepFor(2);
             search.clearSearchInput();
@@ -99,6 +100,7 @@ public class SearchPage extends CommonAPI {
         for (int i = 1; i < values.length; i++) {
             search.searchFor(values[i][0]);
             sleepFor(2);
+            waitUntilClickAble(By.className("s-access-title"));
             verifyFirstProductTitle(values[i][1]);
             clickOnFirstProdcut();
             productPage.clickOnAddToCart();

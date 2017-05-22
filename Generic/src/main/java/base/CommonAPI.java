@@ -101,9 +101,9 @@ public class CommonAPI {
     }
 
     public static WebDriver driver = null;
-    private String saucelabs_username = "mrahman";
+    private String saucelabs_username = "wirelesspremium";
     private String browserstack_username = "lili82";
-    private String saucelabs_accesskey = "ssh key";
+    private String saucelabs_accesskey = "0baa40c9-7743-437f-9968-20e8159afbca";
     private String browserstack_accesskey = "jwxnCRQhWwWpQKyLvHfg";
 
     public String Url() {
@@ -173,7 +173,7 @@ public class CommonAPI {
                                     String browserVersion) throws IOException {
 
         DesiredCapabilities cap = new DesiredCapabilities();
-        cap.setCapability("browser", browserName);
+        cap.setCapability("browserName", browserName);
         cap.setCapability("browser_version", browserVersion);
         cap.setCapability("os", os);
         cap.setCapability("os_version", os_version);
