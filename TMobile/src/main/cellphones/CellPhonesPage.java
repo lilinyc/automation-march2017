@@ -6,8 +6,11 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import utility.reporting.TestLogger;
+
+import java.io.IOException;
 
 /**
  * Created by Lili on 5/17/2017.
@@ -56,5 +59,23 @@ public class CellPhonesPage extends CommonAPI {
         }.getClass().getEnclosingMethod().getName()));
         String productName = getCellPhoneDescription();
         Assert.assertEquals(productName, searchedItem);
+    }
+
+    public void getSearchDataFromExcelFileAndSearch() throws IOException, InterruptedException{
+        TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
+        }.getClass().getEnclosingMethod().getName()));
+        //Create instance of Excel file reader class
+        ItemsToBeSearched itemsToBeSearched = new ItemsToBeSearched();
+
+        //Read data from Excel File.
+        String[][] values = itemsToBeSearched.getSearchDataFromExcelFile();
+        //Running for each loop
+        for (int i = 1; i < values.length; i++) {
+            searchForPhone(values[i][0]);
+            clickOnFirstResult();
+            verifyProductName(values[i][1]);
+            sleepFor(2);
+            searchInput.clear();
+        }
     }
 }
