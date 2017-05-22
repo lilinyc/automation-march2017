@@ -125,11 +125,15 @@ public class SearchPage extends CommonAPI {
 
 
     public void verifyFirstProductTitle(String searchedTitle) {
+        TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
+        }.getClass().getEnclosingMethod().getName()));
         String productName = firstProduct.getText();
         Assert.assertEquals(productName.contains(searchedTitle), true);
     }
 
     public void clickOnFirstProdcut() {
+        TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
+        }.getClass().getEnclosingMethod().getName()));
         firstProduct.click();
         waitUntilVisible(By.cssSelector("#productTitle"));
     }

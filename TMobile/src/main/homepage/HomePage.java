@@ -29,19 +29,21 @@ public class HomePage extends CommonAPI {
     @FindBy(how = How.CSS, using = ".content div:nth-child(4) .cta a")
     public static WebElement switchCarrierLinkElement;
 
-    @FindBy(how = How.CSS, using = ".content div:nth-child(6) p.copy")
+    @FindBy(how = How.CSS, using = ".content div:nth-child(7) p.copy")
     public static WebElement fastestNetworkPromotionTextElement;
 
-    @FindBy(how = How.CSS, using = ".content div:nth-child(6) .normal")
+    @FindBy(how = How.CSS, using = ".content div:nth-child(7) .normal")
     public static WebElement fastestNetworkPromotionContainerElement;
 
-    @FindBy(how = How.CSS, using = ".content div:nth-child(6) .cta a")
+    @FindBy(how = How.CSS, using = ".content div:nth-child(7) .cta a")
     public static WebElement fastestNetworkPromotionLinkElement;
 
     @FindBy(how = How.CSS, using = "#divfootermain")
     public static WebElement footerElement;
 
     public void navigateToCellPhonesPage() {
+        TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
+        }.getClass().getEnclosingMethod().getName()));
         TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
         }.getClass().getEnclosingMethod().getName()));
         cellPhoneLink.click();
@@ -53,6 +55,8 @@ public class HomePage extends CommonAPI {
     }
 
     public void navigateToSamsungPromotion() {
+        TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
+        }.getClass().getEnclosingMethod().getName()));
         cellPhoneLink.click();
         promotionLinkElement.click();
         waitUntilVisible(CellPhonesPage.productContainerSelector);
@@ -63,6 +67,8 @@ public class HomePage extends CommonAPI {
     }
 
     public void navigateToSwitchCarrier() {
+        TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
+        }.getClass().getEnclosingMethod().getName()));
         scrollByCss(switchCarrierContainerElement);
         switchCarrierLinkElement.click();
         waitUntilVisible(SwitchCarrierPage.questionProgressSelector);
@@ -73,6 +79,8 @@ public class HomePage extends CommonAPI {
     }
 
     public void navigateToFastestNetworkPromotionPage() {
+        TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
+        }.getClass().getEnclosingMethod().getName()));
         scrollByCss(fastestNetworkPromotionContainerElement);
         fastestNetworkPromotionLinkElement.click();
         sleepFor(2);
@@ -88,6 +96,8 @@ public class HomePage extends CommonAPI {
     }
 
     public void navigateToFooterPage(String ariaLabel, String waitForElement) {
+        TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
+        }.getClass().getEnclosingMethod().getName()));
         clickByCss("#divfootermain a[aria-label='" + ariaLabel + "']");
         waitUntilVisible(By.cssSelector(waitForElement));
     }

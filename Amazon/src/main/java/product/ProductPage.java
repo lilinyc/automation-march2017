@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.testng.Assert;
+import utility.reporting.TestLogger;
 
 import java.util.concurrent.TimeUnit;
 
@@ -31,6 +32,9 @@ public class ProductPage extends CommonAPI {
     }
 
     public void clickOnAddToCart() {
+        TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
+        }.getClass().getEnclosingMethod().getName()));
+
         addToCartButton.click();
 
         //reduce the wait to 5 sec to not waste time
