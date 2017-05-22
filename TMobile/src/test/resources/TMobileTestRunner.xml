@@ -11,9 +11,11 @@
     <parameter name="browserVersion" value="53.0"/>
     <parameter name="url" value="https://www.t-mobile.com/"/>
 
-    <test name = "NYP Home">
+    <test name = "TMobile Home">
         <classes>
             <class name="home.TestHomepage"/>
+            <class name="home.TestPhonesPage"/>
+            <class name="dataDriven.DataDrivenPhonesSearch"/>
         </classes>
     </test>
 
