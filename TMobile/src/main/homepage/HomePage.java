@@ -44,8 +44,6 @@ public class HomePage extends CommonAPI {
     public void navigateToCellPhonesPage() {
         TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
         }.getClass().getEnclosingMethod().getName()));
-        TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
-        }.getClass().getEnclosingMethod().getName()));
         cellPhoneLink.click();
         waitUntilVisible(CellPhonesPage.productGridSelector);
     }
