@@ -32,8 +32,7 @@ public class SearchItems extends CommonAPI {
         SearchPage searchPage = PageFactory.initElements(driver, SearchPage.class);
 
         searchPage.searchForItem("Lenovo Yoga 14");
-        String category = searchPage.getFirstCategoryTitle();
-        Assert.assertEquals(category, "Computers & Accessories");
+        searchPage.verifyFirstCategory("Computers & Accessories");
     }
 
     @Test
@@ -43,8 +42,7 @@ public class SearchItems extends CommonAPI {
         SearchPage searchPage = PageFactory.initElements(driver, SearchPage.class);
 
         searchPage.searchForItem("Lenovo Yoga 710 80V4000GUS");
-        String productName = searchPage.getFirstProductTitle();
-        Assert.assertEquals(productName.contains("Lenovo Yoga 710 80V4000GUS"), true);
+        searchPage.verifyFirstProductTitle("Lenovo Yoga 710 80V4000GUS");
     }
 
     @Test
@@ -82,8 +80,7 @@ public class SearchItems extends CommonAPI {
         SearchPage searchPage = PageFactory.initElements(driver, SearchPage.class);
 
         searchPage.searchForItem("headphones seinnheiser 360");
-        String productName = searchPage.getFirstProductTitle();
-        Assert.assertEquals(productName.contains("Sennheiser PC 360 Special Edition"), true);
+        searchPage.verifyFirstProductTitle("Sennheiser PC 360 Special Edition");
     }
 
     @Test
@@ -122,8 +119,7 @@ public class SearchItems extends CommonAPI {
         SearchPage searchPage = PageFactory.initElements(driver, SearchPage.class);
 
         searchPage.searchForItem("mouse logitech g502");
-        String productName = searchPage.getFirstProductTitle();
-        Assert.assertEquals(productName.contains("Logitech G502 Proteus"), true);
+        searchPage.verifyFirstProductTitle("Logitech G502 Proteus");
     }
 
     @Test
@@ -162,8 +158,7 @@ public class SearchItems extends CommonAPI {
         SearchPage searchPage = PageFactory.initElements(driver, SearchPage.class);
 
         searchPage.searchForItem("AmazonBasics Portable Bluetooth Speaker");
-        String productName = searchPage.getFirstProductTitle();
-        Assert.assertEquals(productName.contains("AmazonBasics Portable Bluetooth Speaker "), true);
+        searchPage.verifyFirstProductTitle("AmazonBasics Portable Bluetooth Speaker");
     }
 
     @Test
@@ -200,8 +195,7 @@ public class SearchItems extends CommonAPI {
         SearchPage searchPage = PageFactory.initElements(driver, SearchPage.class);
 
         searchPage.searchForItem("Sony XBR65X850D 65-Inch");
-        String productName = searchPage.getFirstProductTitle();
-        Assert.assertEquals(productName.contains("Sony XBR65X850D 65-Inch"), true);
+        searchPage.verifyFirstProductTitle("Sony XBR65X850D 65-Inch");
     }
 
     @Test
@@ -237,8 +231,7 @@ public class SearchItems extends CommonAPI {
         SearchPage searchPage = PageFactory.initElements(driver, SearchPage.class);
 
         searchPage.searchForItem("Canon EOS Rebel T7i");
-        String productName = searchPage.getFirstProductTitle();
-        Assert.assertEquals(productName.contains("Canon EOS Rebel T7i"), true);
+        searchPage.verifyFirstProductTitle("Canon EOS Rebel T7i");
     }
 
     @Test
@@ -274,8 +267,7 @@ public class SearchItems extends CommonAPI {
         SearchPage searchPage = PageFactory.initElements(driver, SearchPage.class);
 
         searchPage.searchForItem("PowerLead Pdvr D011");
-        String productName = searchPage.getFirstProductTitle();
-        Assert.assertEquals(productName.contains("PowerLead Pdvr D011"), true);
+        searchPage.verifyFirstProductTitle("PowerLead Pdvr D011");
     }
 
     @Test
@@ -311,8 +303,7 @@ public class SearchItems extends CommonAPI {
         SearchPage searchPage = PageFactory.initElements(driver, SearchPage.class);
 
         searchPage.searchForItem("Garmin Forerunner 35");
-        String productName = searchPage.getFirstProductTitle();
-        Assert.assertEquals(productName.contains("Garmin Forerunner 35"), true);
+        searchPage.verifyFirstProductTitle("Garmin Forerunner 35");
     }
 
     @Test
@@ -348,8 +339,7 @@ public class SearchItems extends CommonAPI {
         SearchPage searchPage = PageFactory.initElements(driver, SearchPage.class);
 
         searchPage.searchForItem("Samsung Galaxy Tab S3");
-        String productName = searchPage.getFirstProductTitle();
-        Assert.assertEquals(productName.contains("Samsung Galaxy Tab S3"), true);
+        searchPage.verifyFirstProductTitle("Samsung Galaxy Tab S3");
     }
 
     @Test
@@ -385,8 +375,7 @@ public class SearchItems extends CommonAPI {
         SearchPage searchPage = PageFactory.initElements(driver, SearchPage.class);
 
         searchPage.searchForItem("Linksys AC5400 Tri Band");
-        String productName = searchPage.getFirstProductTitle();
-        Assert.assertEquals(productName.contains("Linksys AC5400 Tri Band"), true);
+        searchPage.verifyFirstProductTitle("Linksys AC5400 Tri Band");
     }
 
     @Test
@@ -422,8 +411,7 @@ public class SearchItems extends CommonAPI {
         SearchPage searchPage = PageFactory.initElements(driver, SearchPage.class);
 
         searchPage.searchForItem("Roku 4 4400R");
-        String productName = searchPage.getFirstProductTitle();
-        Assert.assertEquals(productName.contains("Roku 4 4400R"), true);
+        searchPage.verifyFirstProductTitle("Roku 4 4400R");
     }
 
     @Test
@@ -459,8 +447,7 @@ public class SearchItems extends CommonAPI {
         SearchPage searchPage = PageFactory.initElements(driver, SearchPage.class);
 
         searchPage.searchForItem("Philips 465443 Hue White");
-        String productName = searchPage.getFirstProductTitle();
-        Assert.assertEquals(productName.contains("Philips 465443 Hue White"), true);
+        searchPage.verifyFirstProductTitle("Philips 465443 Hue White");
     }
 
     @Test

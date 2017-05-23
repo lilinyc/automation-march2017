@@ -149,4 +149,7 @@ public class SearchPage extends CommonAPI {
         waitUntilVisible(By.cssSelector("#productTitle"));
     }
 
+    public void verifyFirstCategory(String expectedFirstCategory) {
+        Assert.assertEquals(getFirstCategoryTitle(), expectedFirstCategory);
+    }
 }
