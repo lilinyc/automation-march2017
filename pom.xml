@@ -15,6 +15,7 @@
         <module>NYP</module>
         <module>TMobile</module>
         <module>Alibaba</module>
+        <module>StreetEasy</module>
     </modules>
 
     <dependencyManagement>

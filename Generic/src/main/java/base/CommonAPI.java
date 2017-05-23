@@ -390,6 +390,11 @@ public class CommonAPI {
         FileUtils.copyFile(file, new File("screenShots.png"));
     }
 
+    public void waitUntilClickAble(String cssSelector) {
+        By locator = By.cssSelector(cssSelector);
+        waitUntilClickAble(locator);
+    }
+
     //Synchronization
     public void waitUntilClickAble(By locator) {
         WebDriverWait wait = new WebDriverWait(driver, 10);
@@ -398,8 +403,7 @@ public class CommonAPI {
 
     public void waitUntilVisible(String cssSelector) {
         By locator = By.cssSelector(cssSelector);
-        WebDriverWait wait = new WebDriverWait(driver, 10);
-        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        waitUntilVisible(locator);
     }
 
     public void waitUntilVisible(By locator) {
