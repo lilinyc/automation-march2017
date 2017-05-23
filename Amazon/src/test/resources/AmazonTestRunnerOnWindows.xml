@@ -18,6 +18,7 @@
             <class name="home.DataDrivenSearchItems"/>
             <class name="home.SearchItems"/>
             <class name="home.TestAmazonHome"/>
+            <class name="home.SearchItemsNegativeTest"/>
         </classes>
     </test>
 </suite>

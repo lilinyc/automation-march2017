@@ -86,6 +86,8 @@ public class HomePage extends CommonAPI {
     }
 
     public void scrollToFooter() {
+        TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
+        }.getClass().getEnclosingMethod().getName()));
         scrollByCss(footerElement);
     }
 

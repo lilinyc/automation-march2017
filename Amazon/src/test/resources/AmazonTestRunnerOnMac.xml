@@ -13,8 +13,12 @@
 
     <test name = "Amazon Home">
         <classes>
-            <class name="home.TestAmazonHome"/>
+            <class name="searchitems.SearchItems"/>
+            <class name="searchitems.DropDownMenuSearch"/>
+            <class name="home.DataDrivenSearchItems"/>
             <class name="home.SearchItems"/>
+            <class name="home.TestAmazonHome"/>
+            <class name="home.SearchItemsNegativeTest"/>
         </classes>
     </test>
 

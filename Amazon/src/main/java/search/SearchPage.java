@@ -13,13 +13,13 @@ import product.ProductPage;
 import utility.reporting.TestLogger;
 
 import java.io.IOException;
-import java.io.InterruptedIOException;
 
 /**
  * Created by PIIT_NYA on 5/14/2017.
  */
 public class SearchPage extends CommonAPI {
     private static final String categorySelector = ".categoryRefinementsSection";
+    private static final String noResultsSelector = "#noResultsTitle";
 
     @FindBy(how = How.CSS, using = "#twotabsearchtextbox")
     public static WebElement searchInput;
@@ -33,6 +33,9 @@ public class SearchPage extends CommonAPI {
 
     @FindBy(how = How.CSS, using = ".categoryRefinementsSection ul li a span:first-child")
     public static WebElement firstCategory;
+
+    @FindBy(how = How.CSS, using = "#noResultsTitle .a-color-base.a-text-bold")
+    public static WebElement searchDidNotMatchProductMessage;
 
     public void searchFor(String item) {
         TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
@@ -115,6 +118,11 @@ public class SearchPage extends CommonAPI {
         waitUntilVisible(By.cssSelector(categorySelector));
     }
 
+    public void searchForItemNoResults(String item) {
+        this.searchFor(item);
+        waitUntilVisible(By.cssSelector(noResultsSelector));
+    }
+
     public String getFirstCategoryTitle() {
         return firstCategory.getText();
     }
@@ -123,6 +131,9 @@ public class SearchPage extends CommonAPI {
         return firstProduct.getText();
     }
 
+    public String getSearchDidNotMatchProductMessage () {
+        return searchDidNotMatchProductMessage.getText();
+    }
 
     public void verifyFirstProductTitle(String searchedTitle) {
         TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
