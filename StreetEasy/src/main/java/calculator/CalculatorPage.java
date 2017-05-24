@@ -24,7 +24,6 @@ public class CalculatorPage extends CommonAPI {
     @FindBy(how = How.CSS, using = "#mortgage_rate_input")
     public static WebElement mortgageRateInput;
 
-
     @FindBy(how = How.CSS, using = "#calculator_maintenance")
     public static WebElement maintenanceInput;
 
@@ -52,7 +51,7 @@ public class CalculatorPage extends CommonAPI {
     @FindBy(how = How.CSS, using = "#maintenance_fee")
     public static WebElement maintenanceFeeResultLabel;
 
-
+    
     public void loadPage() {
         driver.get(calculatorPageUrl);
     }

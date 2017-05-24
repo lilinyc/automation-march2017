@@ -14,6 +14,7 @@
     <test name = "Street Easy">
         <classes>
             <class name="calculator.CalculatorPageTest"/>
+            <class name="calculator.CalculatorPageNegativeTest"/>
         </classes>
     </test>
 </suite>
