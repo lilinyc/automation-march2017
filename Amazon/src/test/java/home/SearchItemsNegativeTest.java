@@ -14,7 +14,7 @@ import utility.reporting.TestLogger;
  */
 public class SearchItemsNegativeTest extends CommonAPI {
     @Test
-    public void TestSearchInvalidItem() {
+    public void TestSearchInvalidItemRandomLetters() {
         TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
         }.getClass().getEnclosingMethod().getName()));
         SearchPage searchPage = PageFactory.initElements(driver, SearchPage.class);
