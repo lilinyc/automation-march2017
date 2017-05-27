@@ -14,7 +14,7 @@ import utility.reporting.TestLogger;
  * Created by Lili on 5/17/2017.
  */
 public class HomePage extends CommonAPI {
-    @FindBy(how = How.CSS, using = ".lvl-one li:nth-child(2)")
+    @FindBy(how = How.CSS, using = ".main-nav .lvl-one li:nth-child(2) a")
     public static WebElement cellPhoneLink;
 
     @FindBy(how = How.CSS, using = ".basicContent h2.small")
