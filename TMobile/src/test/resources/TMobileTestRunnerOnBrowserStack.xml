@@ -12,7 +12,8 @@
 
     <test name = "TMobile Home">
         <classes>
-            <class name="home.TestHomepage"/>
+            <class name="home.TestHomepagePromotions"/>
+            <class name="home.TestHomepageFooterNavigation"/>
             <class name="home.TestPhonesPage"/>
             <class name="dataDriven.DataDrivenPhonesSearch"/>
         </classes>
