@@ -8,8 +8,14 @@ import utility.reporting.TestLogger;
 
 /**
  * Created by Lili on 5/23/2017.
+ *
+ * edge case testing to verify that the page doesn't break
  */
 public class CalculatorPageNegativeTest extends CommonAPI {
+
+    /**
+     * enters all values as 0
+     */
     @Test
     public void inputLimitTestPrice0() {
         TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
@@ -23,6 +29,10 @@ public class CalculatorPageNegativeTest extends CommonAPI {
         calculatorPage.verifyMonthlyOutput("0", "0");
     }
 
+
+    /**
+     * enters more down payement than price - division by zero test
+     */
     @Test
     public void negativeOutputTest() {
         TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
@@ -36,6 +46,10 @@ public class CalculatorPageNegativeTest extends CommonAPI {
         calculatorPage.verifyMonthlyOutput("-5", "-5");
     }
 
+    /**
+     * extreme input test
+     * mortgage rate 100%
+     */
     @Test
     public void extremeInterestRateTest() {
         TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
@@ -49,6 +63,11 @@ public class CalculatorPageNegativeTest extends CommonAPI {
         calculatorPage.verifyMonthlyOutput("833", "833");
     }
 
+
+    /**
+     * extreme input test
+     * enter values of 10^22 with 10000% interest rate and verifies that calculator can't calculate result
+     */
     @Test
     public void extremelyLargeInputTest() {
         TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {

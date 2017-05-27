@@ -22,17 +22,28 @@ public class TestHomepage extends CommonAPI {
         return "https://www.t-mobile.com/";
     }
 
+    /**
+     * Tests navigate to phone page and verifies the first item title
+     */
     @Test
-    public void TestSearchBasic() {
+    public void TestNavigateToCellPhonePage() {
         TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
         }.getClass().getEnclosingMethod().getName()));
+
         HomePage homePage = PageFactory.initElements(driver, HomePage.class);
         CellPhonesPage cellPhonesPage = PageFactory.initElements(driver, CellPhonesPage.class);
+
         homePage.navigateToCellPhonesPage();
         String productName = cellPhonesPage.getFirstProductName();
         Assert.assertEquals(productName, "Samsung Galaxy S8");
     }
 
+
+    /**
+     * verifies the samsung galaxy promotion
+     * clicks on the promotion
+     * verifies that the open page is the samsung phone page
+     */
     @Test
     public void TestPromotionSamsungGalaxy() {
         TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
@@ -48,6 +59,11 @@ public class TestHomepage extends CommonAPI {
         Assert.assertEquals(productName, "Samsung Galaxy S8");
     }
 
+    /**
+     * Verifies the fast switch promotion
+     * clicks on the promotion
+     * verifies that the open page is the fast switch page
+     */
     @Test
     public void TestPromotionFastSwitch() {
         TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
@@ -64,6 +80,11 @@ public class TestHomepage extends CommonAPI {
         Assert.assertEquals(stepOneText.trim(), "First, which device are you interested in?");
     }
 
+    /**
+     * Verifies the fastest network
+     * clicks on the promotion
+     * verifies that the open page is the fastest network
+     */
     @Test
     public void TestPromotionFastestNetwork() {
         TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
@@ -80,6 +101,10 @@ public class TestHomepage extends CommonAPI {
         Assert.assertEquals(headerText.trim(), "THE FASTEST, MOST ADVANCED LTE NETWORK");
     }
 
+    /**
+     * Footer navigation test - contact information
+     * clicks on link and verifies that contact information page opened
+     */
     @Test
     public void TestFooterContactInformation() {
         TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
@@ -97,7 +122,10 @@ public class TestHomepage extends CommonAPI {
         Assert.assertEquals(headerText.trim(), "Contact Us");
     }
 
-
+    /**
+     * Footer navigation test - order status
+     * clicks on link and verifies that order page opened
+     */
     @Test
     public void TestFooterCheckOrderStatus() {
         TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
@@ -114,6 +142,10 @@ public class TestHomepage extends CommonAPI {
         Assert.assertEquals(headerText.trim(), "Order status");
     }
 
+    /**
+     * Footer navigation test - return policy
+     * clicks on link and verifies that return policy page opened
+     */
     @Test
     public void TestFooterReturnPolicy() {
         TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
@@ -131,6 +163,11 @@ public class TestHomepage extends CommonAPI {
 
     }
 
+
+    /**
+     * Footer navigation test - rebate
+     * clicks on link and verifies that rebate page opened
+     */
     @Test
     public void TestFooterRebate() {
         TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
@@ -147,6 +184,11 @@ public class TestHomepage extends CommonAPI {
         Assert.assertEquals(headerText.trim(), "T-Mobile Promotions Center");
     }
 
+
+    /**
+     * Footer navigation test - page locator
+     * clicks on link and verifies that page locator page opened
+     */
     @Test
     public void TestFooterPageLocator() {
         TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
@@ -163,6 +205,11 @@ public class TestHomepage extends CommonAPI {
         Assert.assertEquals(headerText.trim(), "Store Locator");
     }
 
+
+    /**
+     * Footer navigation test - trade in program
+     * clicks on link and verifies that trade in program  page opened
+     */
     @Test
     public void TestFooterTradeInProgram() {
         TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
@@ -179,6 +226,11 @@ public class TestHomepage extends CommonAPI {
         Assert.assertEquals(headerText.trim(), "Get an estimate");
     }
 
+
+    /**
+     * Footer navigation test - support page
+     * clicks on link and verifies that support page opened
+     */
     @Test
     public void TestFooterSupportHome() {
         TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
@@ -195,6 +247,10 @@ public class TestHomepage extends CommonAPI {
         Assert.assertEquals(headerText.trim(), "ACCOUNT");
     }
 
+    /**
+     * Footer navigation test - device support
+     * clicks on link and verifies that  device support page opened
+     */
     @Test
     public void TestFooterDeviceSupport() {
         TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
@@ -211,6 +267,11 @@ public class TestHomepage extends CommonAPI {
         Assert.assertEquals(headerText.trim(), "Select a device");
     }
 
+
+    /**
+     * Footer navigation test - question about bill
+     * clicks on link and verifies that question about bill page opened
+     */
     @Test
     public void TestFooterQuestionsAboutYourBill() {
         TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
@@ -227,6 +288,10 @@ public class TestHomepage extends CommonAPI {
         Assert.assertEquals(headerText.trim(), "Support");
     }
 
+    /**
+     * Footer navigation test - plans and services
+     * clicks on link and verifies that plans and services page opened
+     */
     @Test
     public void TestFooterPlansAndServices() {
         TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
@@ -241,20 +306,5 @@ public class TestHomepage extends CommonAPI {
 
         String headerText = getTextByCss("h1.j-placeTitle");
         Assert.assertEquals(headerText.trim(), "Plans & services");
-    }
-
-    @Test
-    public void TestFooterActivatePrepaid() {
-        //nth5
-    }
-
-    @Test
-    public void TestFooterRefillPrepaid() {
-        //nth6
-    }
-
-    @Test
-    public void TestFooterInternational() {
-        //nth7
     }
 }

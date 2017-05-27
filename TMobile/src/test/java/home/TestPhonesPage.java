@@ -18,10 +18,20 @@ public class TestPhonesPage extends CommonAPI {
         return "https://www.t-mobile.com/";
     }
 
+    /**
+     * phone page test
+     * searches for Iphone
+     * clicks on first result
+     * verifies that the open product page is iphone
+     *
+     * all tests are same in this page just search for different phones
+     * data driven tests are located in DataDrivenPhonesSearch page
+     */
     @Test
     public void SearchForIPhone7() {
         TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
         }.getClass().getEnclosingMethod().getName()));
+
         HomePage homePage = PageFactory.initElements(driver, HomePage.class);
         CellPhonesPage cellPhonesPage = PageFactory.initElements(driver, CellPhonesPage.class);
 

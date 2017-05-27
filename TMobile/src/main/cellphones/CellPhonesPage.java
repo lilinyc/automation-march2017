@@ -61,6 +61,19 @@ public class CellPhonesPage extends CommonAPI {
         Assert.assertEquals(productName, searchedItem);
     }
 
+
+    /**
+     * Same test as in Test Home page but uses input from excel file
+     *
+     * Loads excel file
+     * For each row
+     * searches for item
+     * clicks on first result
+     * verifies that the open product page is the searched item
+     *
+     * @throws IOException
+     * @throws InterruptedException
+     */
     public void getSearchDataFromExcelFileAndSearch() throws IOException, InterruptedException{
         TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
         }.getClass().getEnclosingMethod().getName()));

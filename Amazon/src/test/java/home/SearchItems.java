@@ -15,7 +15,6 @@ import utility.reporting.TestLogger;
  * Created by PIIT_NYA on 5/7/2017.
  */
 public class SearchItems extends CommonAPI {
-
     @Test
     public void TestSerachBasic() {
         TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
@@ -35,6 +34,10 @@ public class SearchItems extends CommonAPI {
         searchPage.verifyFirstCategory("Computers & Accessories");
     }
 
+    /**
+     * Goes to amazon home page, enters search for laptop
+     * verifies that the first product in the results is the searched one
+     */
     @Test
     public void TestSearchLaptop() {
         TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
@@ -45,6 +48,12 @@ public class SearchItems extends CommonAPI {
         searchPage.verifyFirstProductTitle("Lenovo Yoga 710 80V4000GUS");
     }
 
+    /**
+     * Goes to amazon home page, enters search for laptop
+     * click on the first item
+     * wait for product page to load
+     * verifies that the product title in the product page is what we searched for
+     */
     @Test
     public void TestSearchLaptopDrillDown() {
         TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
@@ -58,6 +67,14 @@ public class SearchItems extends CommonAPI {
         productPage.verifyProductTitle("Lenovo Yoga 710 80V4000GUS");
     }
 
+
+    /**
+     * Goes to amazon home page, enters search for laptop
+     * click on the first item
+     * waits for the product page to load
+     * clicks on the add to cart
+     * verifies that the product title in the add to cart confirmation page is what we searched for
+     */
     @Test
     public void TestSearchLaptopOrder() {
         TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {

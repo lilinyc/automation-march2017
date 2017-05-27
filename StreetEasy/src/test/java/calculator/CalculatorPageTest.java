@@ -11,6 +11,8 @@ import utility.reporting.TestLogger;
 
 /**
  * Created by Lili on 5/22/2017.
+ *
+ * tests for the mortgage calculator street easy app
  */
 public class CalculatorPageTest extends CommonAPI {
     @Override
@@ -18,6 +20,10 @@ public class CalculatorPageTest extends CommonAPI {
         return "http://streeteasy.com";
     }
 
+
+    /**
+     * basic test, verifies calculator page is loaded
+     */
     @Test
     public void LoadCalculatorPage() {
         TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
@@ -27,6 +33,12 @@ public class CalculatorPageTest extends CommonAPI {
         calculatorPage.loadPage();
     }
 
+    /**
+     * basic input test
+     * enters values
+     * clicks calculate
+     * verifies output
+     */
     @Test
     public void TestSimpleInput() {
         TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
@@ -40,6 +52,13 @@ public class CalculatorPageTest extends CommonAPI {
         calculatorPage.verifyMonthlyOutput("382", "382");
     }
 
+    /**
+     * complex input test
+     * enters values (price, down payment)
+     * enters additional input (maintenance, property tax)
+     * clicks calculate
+     * verifies output
+     */
     @Test
     public void TestSimpleInputWithMaintanence() {
         TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
@@ -54,6 +73,9 @@ public class CalculatorPageTest extends CommonAPI {
         calculatorPage.verifyMonthlyOutput("382", "482", "100");
     }
 
+    /**
+     * verifies output with different input values
+     */
     @Test
     public void TestInputHalfDownPayment() {
         TestLogger.log(getClass().getSimpleName() + ": " + converToString(new Object() {
